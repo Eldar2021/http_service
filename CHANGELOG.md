@@ -1,2 +1,3 @@
 - first commit `http_service1 v1.0.0+1` ([source](https://github.com/Eldar2021/http_service/tree/main))
 - change example `http_service1 v1.0.0+2` ([source](https://github.com/Eldar2021/http_service))
+- tested package `http_service1 v1.0.0+3` ([source](https://github.com/Eldar2021/http_service))
