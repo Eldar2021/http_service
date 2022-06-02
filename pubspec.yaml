@@ -1,0 +1,17 @@
+name: http_service
+description: My Dart package http service
+version: 1.0.0+1
+# publish_to: local
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  dartz: ^0.10.1
+  http: ^0.13.4
+
+dev_dependencies:
+  coverage: ^1.1.0
+  mocktail: ^0.3.0
+  test: ^1.19.2
+  very_good_analysis: ^3.0.0
