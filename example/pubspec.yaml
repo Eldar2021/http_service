@@ -11,7 +11,7 @@ dependencies:
   path: ^1.8.0
   http: ^0.13.4
   dartz: ^0.10.1
-  http_service:
+  http_service1:
     path: ../
 
 dev_dependencies:
