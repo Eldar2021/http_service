@@ -7,27 +7,24 @@ import 'exceptions/exception.dart';
 class HttpService {
   HttpService(
     Client client,
-    String baseUrl, {
-    Future<String?>? getToken,
-  })  : _getToken = getToken,
-        _client = client,
-        _baseUrl = baseUrl;
+    this.baseUrl, {
+    this.getToken,
+  }) : _client = client;
 
   final Client _client;
-  final Future<String?>? _getToken;
-  final String _baseUrl;
+  final Future<String?>? getToken;
+  final String baseUrl;
 
-  String? _token;
+  String? token;
 
   Future<Map<String, String>> getHeader() async {
-    // ignore: unnecessary_statements
-    if (_getToken == null) _token ?? (_token = await _getToken);
+    token ??= await getToken;
 
     final headers = <String, String>{
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
     };
-    if (_token != null) headers['Authorization'] = 'Bearer $_token';
+    if (token != null) headers['Authorization'] = 'Bearer $token';
 
     return headers;
   }
@@ -71,7 +68,11 @@ class HttpService {
   }) async {
     final header = await getHeader();
     final uri = buildUri(path, params: headerParams);
-    final response = await _client.post(uri, headers: header);
+    final response = await _client.post(
+      uri,
+      headers: header,
+      body: jsonEncode(body),
+    );
     return responseType<T>(response, fromJson);
   }
 
@@ -105,7 +106,7 @@ class HttpService {
   }
 
   Uri buildUri(String path, {Map<String, dynamic>? params}) {
-    final uri = Uri.parse(_baseUrl + path);
+    final uri = Uri.parse(baseUrl + path);
     return uri;
   }
 }
