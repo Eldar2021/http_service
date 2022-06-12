@@ -9,11 +9,23 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
+
+  # Functional programming in Dart
   dartz: ^0.10.1
+
+  # Library for making HTTP requests.
   http: ^0.13.4
 
 dev_dependencies:
+
+  # Coverage provides coverage data collection, manipulation, and formatting for Dart.
   coverage: ^1.1.0
+
+  # Mocktail focuses on providing a  simple API for creating mocks in Dart without the need for manual mocks or code generation.
   mocktail: ^0.3.0
+
+  # Test provides a standard way of writing and running tests in Dart.
   test: ^1.19.2
+
+  # This package provides lint rules for Dart and Flutte
   very_good_analysis: ^3.0.0
