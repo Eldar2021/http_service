@@ -13,7 +13,7 @@ dependencies:
   # Functional programming in Dart
   dartz: ^0.10.1
 
-  # Library for making HTTP requests.
+  # Library for making HTTP requests. 
   http: ^0.13.4
 
 dev_dependencies:
@@ -27,5 +27,5 @@ dev_dependencies:
   # Test provides a standard way of writing and running tests in Dart.
   test: ^1.19.2
 
-  # This package provides lint rules for Dart and Flutte
+  # This package provides lint rules for Dart and Flutter
   very_good_analysis: ^3.0.0
