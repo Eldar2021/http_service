@@ -17,7 +17,6 @@
 ### The goal of this package is to make it easy to implement the  `Http services` in a  `Dart` application.
 
 
-
 # Installing
 
 Add Get to your pubspec.yaml file:
@@ -33,6 +32,16 @@ Import get in files that it will be used:
 import 'package:http_service1/http_service1.dart';
 ```
 
+## Exceptions
+
+### Auhtentication Exception
+* `Auhtentication Exception` is thrown when an authentication error occurs while accessing the naming or directory service. 
+
+### Convert Exception
+* `Converter Exception` is an exception to indicate that the requested conversion cannot be performed.
+
+### Server Exception
+* The `server exception` is used when there will be problems with receiving any response packets from the server.
 
 ## Example
 
@@ -100,3 +109,4 @@ class Model {
 ```
 
 ## Contributing
+

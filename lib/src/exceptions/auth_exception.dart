@@ -1,3 +1,4 @@
+// Auhtentication Exception
 class AuthExc implements Exception {
   AuthExc({this.massage});
 

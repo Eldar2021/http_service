@@ -1,3 +1,4 @@
+// Server Exception
 class ServerExc implements Exception {
   ServerExc({this.massage});
 
