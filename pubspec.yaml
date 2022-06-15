@@ -1,6 +1,6 @@
 name: http_service1
 description: My Dart package http service1
-version: 1.0.0+4
+version: 1.0.0+5
 homepage: https://github.com/Eldar2021/http_service
 repository: https://github.com/Eldar2021/http_service
 # publish_to: local

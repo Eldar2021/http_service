@@ -2,3 +2,4 @@
 - change example `http_service1 v1.0.0+2` ([source](https://github.com/Eldar2021/http_service))
 - tested package `http_service1 v1.0.0+3` ([source](https://github.com/Eldar2021/http_service))
 - changed read me file `http_service1 v1.0.0+4` ([source](https://github.com/Eldar2021/http_service))
+- added some documentation `http_service1 v1.0.0+5` ([source](https://github.com/Eldar2021/http_service))
