@@ -2,10 +2,10 @@ import 'package:http_service1/http_service1.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final servertExc = ServerExc();
+  final servertExc = ServerException();
 
   test('is a type exception', () {
-    expect(servertExc, isA<ServerExc>());
+    expect(servertExc, isA<ServerException>());
     expect(servertExc, isA<Exception>());
   });
 
@@ -15,7 +15,7 @@ void main() {
   });
 
   test('custom massage', () {
-    final serverExc1 = ServerExc(massage: 'error');
+    final serverExc1 = ServerException(massage: 'error');
     expect(serverExc1.massage, 'error');
     expect(serverExc1.toString(), 'error');
   });

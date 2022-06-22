@@ -1,11 +1,11 @@
-// Auhtentication Exception
-class AuthExc implements Exception {
-  AuthExc({this.massage});
+/// Auhtentication Exception
+class AuthenticationException implements Exception {
+  AuthenticationException({this.message});
 
-  final String? massage;
+  final String? message;
 
   @override
   String toString() {
-    return massage ?? 'Auhtentication Exception';
+    return message ?? 'Auhtentication Exception';
   }
 }

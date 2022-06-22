@@ -10,13 +10,13 @@ void main() {
   });
 
   test('default massage', () {
-    expect(convertExc.massage, null);
+    expect(convertExc.message, null);
     expect(convertExc.toString(), 'Convert Exception');
   });
 
   test('custom massage', () {
-    final convertExc1 = ConvertExc(massage: 'error');
-    expect(convertExc1.massage, 'error');
+    final convertExc1 = ConvertExc(message: 'error');
+    expect(convertExc1.message, 'error');
     expect(convertExc1.toString(), 'error');
   });
 }

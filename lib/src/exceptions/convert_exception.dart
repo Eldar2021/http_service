@@ -1,12 +1,12 @@
-// Convert Exception
-// Exception to indicate that the requested conversion cannot be performed.
+/// Convert Exception
+/// Exception to indicate that the requested conversion cannot be performed.
 class ConvertExc implements Exception {
-  ConvertExc({this.massage});
+  ConvertExc({this.message});
 
-  final String? massage;
+  final String? message;
 
   @override
   String toString() {
-    return massage ?? 'Convert Exception';
+    return message ?? 'Convert Exception';
   }
 }

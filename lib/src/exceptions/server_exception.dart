@@ -1,6 +1,6 @@
-// Server Exception
-class ServerExc implements Exception {
-  ServerExc({this.massage});
+/// Server Exception
+class ServerException implements Exception {
+  ServerException({this.massage});
 
   final String? massage;
 

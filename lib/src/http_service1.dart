@@ -17,6 +17,7 @@ class HttpService {
 
   String? token;
 
+  /// Get a token and return header
   Future<Map<String, String>> getHeader() async {
     token ??= await getToken;
 
@@ -29,24 +30,30 @@ class HttpService {
     return headers;
   }
 
+  /// Working with the response
   Future<Either<Exception, T>> responseType<T>(
     Response response,
     T Function(String body) fromJson,
   ) async {
+    /// if the response is successful, return the data  fromJson
     if (response.statusCode == 200) {
       try {
         final model = fromJson(response.body);
         return Right(model);
       } catch (e) {
-        return Left(ConvertExc(massage: '$e'));
+        return Left(ConvertExc(message: '$e'));
       }
+
+      /// if an Unauthorized  return Authentication Exception
     } else if (response.statusCode == 401) {
-      return Left(AuthExc());
+      return Left(AuthenticationException());
     } else {
-      return Left(ServerExc());
+      /// if the response is not successful and unauthorized, it will return a server exception
+      return Left(ServerException());
     }
   }
 
+  /// Get Json data
   Future<Either<Exception, T>> get<T>(
     String path, {
     Map<String, dynamic>? params,
@@ -60,6 +67,7 @@ class HttpService {
     return responseType<T>(response, fromJson);
   }
 
+  /// Perform a query using the "POST" method and using the JSON content type
   Future<Either<Exception, T>> post<T>(
     String path, {
     Map<String, dynamic>? body,
@@ -76,6 +84,7 @@ class HttpService {
     return responseType<T>(response, fromJson);
   }
 
+  /// Perform a query using the "PATCH" method and using the JSON content type
   Future<Either<Exception, T>> patch<T>(
     String path, {
     Map<String, dynamic>? body,
@@ -91,6 +100,7 @@ class HttpService {
     return responseType<T>(response, fromJson);
   }
 
+  /// Perform a query using the "PUT" method and using the JSON content type
   Future<Either<Exception, T>> put<T>(
     String path, {
     Map<String, dynamic>? body,
